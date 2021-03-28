@@ -22,6 +22,8 @@ class CreateRiskTable extends Migration
             $table->string('likelihood');
             $table->string('impact');
             $table->string('inherentRiskScore');
+            $table->string('treatmentOption');
+
             $table->string('control');
             $table->string('treatmentDescription');
             $table->string('riskCustodian');

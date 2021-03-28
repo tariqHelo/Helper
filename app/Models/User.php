@@ -12,7 +12,7 @@ use \DateTimeInterface;
 
 class User extends Authenticatable
 {
-    use SoftDeletes, Notifiable, HasApiTokens, Billable;
+    use SoftDeletes, Notifiable;
 
     /**
      * The attributes that are mass assignable.
