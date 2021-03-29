@@ -35,7 +35,7 @@
 
             </li>
             <li class="nav-item start ">
-                <a href="{{ route('riskMangment') }}" class="nav-link nav-toggle">
+                <a href="{{ route('mangment') }}" class="nav-link nav-toggle">
                     <i class="fa fa-laptop"></i>
                     <span class="title">Risk Mangment</span>
                     <span class="arrow"></span>
@@ -49,24 +49,28 @@
                </a>
             </i>
 			
-
-					<li class="last ">
-						<a href="javascript:;">
-						<i class="icon-pointer"></i>
-						<span class="title">Maps</span>
-						<span class="arrow "></span>
-						</a>
-						<ul class="sub-menu">
-							<li>
-								<a href="maps_google.html">
-								Google Maps</a>
-							</li>
-							<li>
-								<a href="maps_vector.html">
-								Vector Maps</a>
-							</li>
-						</ul>
-					</li>
+            <li class="last ">
+                <a href="javascript:;">
+                <i class="fa fa-cogs"></i>
+                <span class="title">Users Mangment</span>
+                <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="{{ route('permissions.index') }}">
+                        Permissions</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('roles.index') }}">
+                        Rols </a>
+                        
+                    </li>
+                        <li>
+                        <a href="{{ route('users.index') }}">
+                        Users </a>
+                    </li>
+                </ul>
+            </li>
 				</ul>
 				<!-- END SIDEBAR MENU -->
 			</div>

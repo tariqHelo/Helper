@@ -13,18 +13,20 @@ class QustionImport implements ToCollection
     */
     public function collection(Collection $collection)
     { // dd(20);
-        DB::table('qustions')->truncate();
         foreach($collection as $key => $value)
         {
-            //dd($value[0]);
-            if($key > 0)
+            if($value[0] == 'key'):
+                continue;
+            endif;
+
+            if($value[0] != null)
             {
-                if($value[0] == null):
-                    continue;
-                endif;
+                // if($value[1] == null):
+                //     continue;
+                // endif;
                 DB::table('qustions')->insert([
                   'title'      => $value[0],
-                  
+                  //dd($value[1])
                 ]);
             }
         }

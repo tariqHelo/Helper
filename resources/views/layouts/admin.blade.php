@@ -35,8 +35,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="{{asset('metronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES --> 
 <!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="{{ asset('metronic/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('metronic/assets/global/plugins/select2/select2.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('metronic/assets/global/plugins/jquery-multi-select/css/multi-select.css') }}"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="{{ asset('metronic/assets/global/css/components-md.css') }}" id="style_components" rel="stylesheet" type="text/css"/>
@@ -45,6 +47,12 @@ License: You must have a valid license purchased only from themeforest(the above
 <link id="style_color" href="{{ asset('metronic/assets/admin/layout2/css/themes/grey.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('metronic/assets/admin/layout2/css/custom.css') }}" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
+
+
+
+
+
+
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <!-- END HEAD -->
@@ -109,16 +117,21 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('metronic/assets/global/plugins/uniform/jquery.uniform.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
+
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="{{asset('metronic/assets/global/plugins/select2/select2.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('metronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}"></script>
+<script type="text/javascript" src="{{asset('metronic/assets/global/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('metronic/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js')}}"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{asset('metronic/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic/assets/admin/layout2/scripts/layout.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic/assets/admin/layout2/scripts/demo.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic/assets/admin/pages/scripts/table-managed.js')}}"></script>
+<script src="{{asset('metronic/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
+
 <script>
 jQuery(document).ready(function() {       
 Metronic.init(); // init metronic core components
@@ -126,7 +139,11 @@ Layout.init(); // init current layout
 Demo.init(); // init demo features
    TableManaged.init();
 });
+
+
 </script>
 </body>
 <!-- END BODY -->
 </html>
+
+

@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\QustionImport ;
-//use App\Models\ExcelImport;
-
+use App\Models\QustionImport;
 use Maatwebsite\Excel\Facades\Excel;
 use DB;
 use Auth;
@@ -17,7 +15,8 @@ class QustionImportController extends Controller
      public function index()
     {
         $qustions = DB::table('qustions')->orderBy('id', 'ASC')->get();
-        return view('admin.assigenment.assigenment')->with('qustions' ,$qustions);
+       // dd($qustions);
+        return view('admin.assigenment.assigenment')->with('qustions' , $qustions);
          
     }
     public function import(Request $request)
@@ -30,8 +29,19 @@ class QustionImportController extends Controller
         ]);
         $file = $request->select_file;
       //  dd($file->GetpathName());
+        DB::table('qustions')->truncate();
         Excel::import(new QustionImport ,$file);
         Session::flash("msg","File Excel Uploded successfully");
         return redirect()->back();
+    }
+    public function store(Request $request)
+    {    
+        dd($request->optionsRadios);
+        foreach($request->optionsRadios as $value):
+            DB::table('answers')->insert([
+                'title' => $value['question'],
+                'answer' => $value['answer'],
+            ]);
+        endforeach;
     }
 }

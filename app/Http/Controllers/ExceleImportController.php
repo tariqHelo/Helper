@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ExcelImport;
-//use App\Models\ExcelImport;
-
 use Maatwebsite\Excel\Facades\Excel;
 use DB;
 use Auth;
@@ -20,10 +18,8 @@ class ExceleImportController extends Controller
         return view('admin.import.excel')->with('risks' ,$risk);
          
     }
-
     public function import(Request $request)
     {    
-            
         $this->validate($request, [
             'select_file'  => 'required|mimes:xls,xlsx'
         ],

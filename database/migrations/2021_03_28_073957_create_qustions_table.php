@@ -15,7 +15,7 @@ class CreateQustionsTable extends Migration
     {
         Schema::create('qustions', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
+            $table->longText('title');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateQustionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qustion');
+        Schema::dropIfExists('qustions');
     }
 }

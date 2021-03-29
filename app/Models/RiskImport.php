@@ -11,4 +11,8 @@ class RiskImport extends Model
   use HasFactory;
   protected $table= "risk";
   
+  protected $fillable = ['name', 'description', 'affected' , 
+  'affectedProperty', 'likelihood' ,'impact' ,'inherentRiskScore', 'treatmentOption','control','treatmentDescription',
+   'riskCustodian' , 'riskOwner' , 'treatmentDueDate' , 'status' , 'residualRiskScore' ,'riskValue'];
+
 }
