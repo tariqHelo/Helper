@@ -24,22 +24,22 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'description'=> 'required',
-            'affected'=> 'required' ,
-            'affectedProperty' => 'required',
-            'likelihood'=> 'required' ,
-            'impact'=> 'required' ,
-            'inherentRiskScore'=> 'required',
-            'treatmentOption'=> 'required',
-            'control'=> 'required',
-            'treatmentDescription'=> 'required',
-            'riskCustodian'=> 'required' ,
-            'riskOwner' => 'required',
-            'treatmentDueDate' => 'required',
-            'status'=> 'required' ,
-            'residualRiskScore'=> 'required' ,
-            'riskValue'
+              'name' => 'required',
+              'description'=> 'required',
+              'affected'=> 'required' ,
+              'affectedProperty' => 'required',
+              'likelihood'=> 'required' ,
+              'impact'=> 'required' ,
+              'inherentRiskScore'=> 'required',
+              'treatmentOption'=> 'required',
+              'control'=> 'required',
+              'treatmentDescription'=> 'required',
+              'riskCustodian'=> 'required' ,
+              'riskOwner' => 'required',
+              'treatmentDueDate' => 'required',
+              'status'=> 'required' ,
+              'residualRiskScore'=> 'required' ,
+              'riskValue' =>'required'
         ];
     }
 

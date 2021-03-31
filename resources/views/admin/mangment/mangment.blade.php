@@ -16,9 +16,9 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="btn-group">
-												<button id="sample_editable_1_new" class="btn green">
+											<a href="{{ route('riskMangment.create') }}"  class="btn green">
 												Add New <i class="fa fa-plus"></i>
-												</button>
+												</a>
 											</div>
 										</div>
 										<div class="col-md-6">
@@ -58,34 +58,35 @@
 								</tr>
 								</thead>
 								<tbody>
-								<tr>
-									<td>
-										 alex
-									</td>
-									<td>
-										 Alex Nilson
-									</td>
-									<td>
-										 1234
-									</td>
-									<td class="center">
-										 power user
-									</td>
-									<td>
-										Edit 
-									</td>
-									<td>
-										Delete 
-									</td>
-									<td>
-										Edit 
-									</td>
-									<th>
-										 <a href="" data-target="#stack1" data-toggle="modal" class="btn btn-primary btn-sm"><i class='fa fa-edit'></i></a>
-                                         <a href="" onclick='return confirm("Are you sure dude?")' class="btn btn-warning btn-sm"><i class='fa fa-trash'></i></a>
-									</th>
-		
-								</tr>
+									@foreach ($mangmants as $mangmant )
+										<tr>
+											<td>
+												{{ $mangmant->id }}
+											</td>
+											<td>
+												{{ $mangmant->status }}
+											</td>
+											<td>
+												{{ $mangmant->subject }}
+											</td>
+											<td >
+												{{ $mangmant->inhernRisk }}
+											</td>
+											<td>
+												{{ $mangmant->submissionDate }}
+											</td>
+											<td>
+												{{ $mangmant->migrationPlanned }}
+											</td>
+											<td>
+												{{ $mangmant->mangmantReview }}
+											</td>
+											<th>
+												<a href="{{ route('edit-delete'    ,  $mangmant->id) }}"  class="btn btn-primary btn-sm"><i class='fa fa-edit'></i></a>
+												<a href="{{ route('mangment-delete' , $mangmant->id ) }}" onclick='return confirm("Are you sure dude?")' class="btn btn-warning btn-sm"><i class='fa fa-trash'></i></a>
+											</th>
+										</tr>
+				     				@endforeach
 							
 								</tbody>
 								</table>

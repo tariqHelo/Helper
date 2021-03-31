@@ -5,7 +5,7 @@ use App\Http\Controllers\ExceleImportController;
 use App\Http\Controllers\QustionImportController;
 use App\Http\Controllers\GovernanceController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\MangementController;
+use App\Http\Controllers\RiskMangmentController;
 
 
 
@@ -55,11 +55,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
 
     Route::resource('assigenment',    QustionImportController::class);
 
-    Route::resource('riskMangment', MangementController::class);
+    Route::resource('riskMangment', RiskMangmentController::class);
+    Route::get('/delete/riskMangment/{riskMangment}', [RiskMangmentController::class
+    ,'destroy'])->name('mangment-delete');
+    Route::get('/edit/riskMangment/{riskMangment}', [RiskMangmentController::class
+    ,'edit'])->name('edit-delete');
 
     Route::resource('/Excelerisk',    ExceleImportController::class);
-    Route::get('/delete/Excelerisk/{id}', [ExceleImportController::class ,'destroy'])->name('risk-delete');
-
+    Route::get('/delete/Excelerisk/{risk}', [ExceleImportController::class ,'destroy'])->name('risk-delete');
+    Route::get('/edit/Excelerisk/{risk}', [ExceleImportController::class
+  ,'edit'])->name('edit-Excelerisk');
 
     Route::post('/import_excel/import', [ExceleImportController::class,'import'])->name('import_excel');
     Route::post('/qustion_excel/import', [QustionImportController::class,'import'])->name('qustion_excel');

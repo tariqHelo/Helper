@@ -47,7 +47,7 @@ class ExceleImportController extends Controller
      */
     public function store(CreateRequest $request)
     {    ///dd($request->all());
-          RiskImport::create($request->all());
+          ExcelImport::create($request->all());
           Session::flash("msg","Row created successfully");
           return redirect()->route('Excelerisk.index');
     }
@@ -69,9 +69,10 @@ class ExceleImportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(ExcelImport $risk)
+    { //dd($risk);
+     return view('admin.import.edit')
+     ->with('risk' , $risk);
     }
 
     /**
@@ -81,9 +82,9 @@ class ExceleImportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-          RiskImport::find($id)->update($request->all());
+    public function update(CreateRequest $request, ExcelImport $risk)
+    {    ///dd($request->all());
+          $risk->update($request->all());
           Session::flash("msg","Row Updated successfully");
           return redirect()->route('Excelerisk.index');
     }
@@ -94,9 +95,9 @@ class ExceleImportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ExcelImport $risk)
     {
-        RiskImport::findOrFail($id)->delete();
+        $risk->delete();
         session()->flash("msg", "w: Row Deleted Successfully");
         return redirect()->route('Excelerisk.index');
       }

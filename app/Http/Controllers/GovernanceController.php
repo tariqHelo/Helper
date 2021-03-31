@@ -23,7 +23,7 @@ class GovernanceController extends Controller
      */
     public function create()
     {
-        //
+      return view('admin.governance.create');
     }
 
     /**

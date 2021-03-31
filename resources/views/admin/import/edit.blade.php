@@ -9,16 +9,18 @@
 		<div class="portlet-title">
 			<div class="caption font-green-haze">
 				<i class="icon-settings font-green-haze"></i>
-				<span class="caption-subject bold uppercase"> Create Form</span>
+				<span class="caption-subject bold uppercase"> Edit Form</span>
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form role="form" class="form-horizontal">
+			<form action="{{ route('Excelerisk.update',$risk->id) }}" method="post" role="form" class="form-horizontal">
+				@csrf
+				@method('PUT')
 				<div class="form-body">
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>Name</label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Enter your name">
+							<input type="text" class="form-control" name="name" value="{{ $risk->name }}" placeholder="Enter your name">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -26,7 +28,7 @@
 				<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>description</label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="description" value="{{ old('description') }}" placeholder="Enter description">
+							<input type="text" class="form-control" name="description" value="{{ $risk->description }}" placeholder="Enter description">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -34,7 +36,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>affected</label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="affected" value="{{ old('affected') }}"  placeholder="Enter affected">
+							<input type="text" class="form-control" name="affected" value="{{ $risk->affected }}"  placeholder="Enter affected">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -42,7 +44,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>affectedProperty </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="affectedProperty" value="{{ old('affectedProperty') }}" placeholder="Enter affectedProperty">
+							<input type="text" class="form-control" name="affectedProperty" value="{{ $risk->affectedProperty }}" placeholder="Enter affectedProperty">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -50,7 +52,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>likelihood </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="likelihood" value="{{ old('likelihood') }}" placeholder="Enter likelihood">
+							<input type="text" class="form-control" name="likelihood" value="{{ $risk->likelihood }}" placeholder="Enter likelihood">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -58,7 +60,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f> impact</label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="impact" value="{{ old('impact') }}" placeholder="Enter impact">
+							<input type="text" class="form-control" name="impact" value="{{ $risk->impact }}" placeholder="Enter impact">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -67,7 +69,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>inherentRiskScore </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="inherentRiskScore" value="{{ old('inherentRiskScore') }}" placeholder="Enter inherentRiskScore">
+							<input type="text" class="form-control" name="inherentRiskScore" value="{{ $risk->inherentRiskScore }}" placeholder="Enter inherentRiskScore">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -75,7 +77,7 @@
 						<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>treatmentOption </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="treatmentOption" value="{{ old('treatmentOption') }}" placeholder="Enter treatmentOption">
+							<input type="text" class="form-control" name="treatmentOption" value="{{ $risk->treatmentOption }}" placeholder="Enter treatmentOption">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -84,7 +86,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>treatmentDescription </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control"name="treatmentDescription" value="{{ old('treatmentDescription') }}"  placeholder="Enter treatmentDescription">
+							<input type="text" class="form-control"name="treatmentDescription" value="{{ $risk->treatmentDescription }}"  placeholder="Enter treatmentDescription">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -92,7 +94,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" f>control </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="control" value="{{ old('control') }}" placeholder="Enter control">
+							<input type="text" class="form-control" name="control" value="{{ $risk->control }}" placeholder="Enter control">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -100,7 +102,7 @@
 					<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" for="form_control_1">riskCustodian </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="riskCustodian" value="{{ old('riskCustodian') }}"id="form_control_1" placeholder="Enter riskCustodian">
+							<input type="text" class="form-control" name="riskCustodian" value="{{ $risk->riskCustodian }}"id="form_control_1" placeholder="Enter riskCustodian">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -109,7 +111,7 @@
 						<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" for="form_control_1">riskOwner </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control"name="riskOwner" value="{{ old('riskOwner') }}" placeholder="Enter riskOwner">
+							<input type="text" class="form-control"name="riskOwner" value="{{ $risk->riskOwner }}" placeholder="Enter riskOwner">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -117,7 +119,7 @@
 						<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" for="form_control_1">treatmentDueDate </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control"name="treatmentDueDate" value="{{ old('treatmentDueDate') }}" id="form_control_1" placeholder="Enter treatmentDueDate">
+							<input type="text" class="form-control"name="treatmentDueDate" value="{{ $risk->treatmentDueDate }}" id="form_control_1" placeholder="Enter treatmentDueDate">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -125,7 +127,7 @@
 						<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" for="form_control_1"> status</label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="status" value="{{ old('status') }}"id="form_control_1" placeholder="Enter status">
+							<input type="text" class="form-control" name="status" value="{{ $risk->status }}"id="form_control_1" placeholder="Enter status">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -133,7 +135,7 @@
 						<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" for="form_control_1">residualRiskScore </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control" name="residualRiskScore" value="{{ old('residualRiskScore') }}"id="form_control_1" placeholder="Enter residualRiskScore ">
+							<input type="text" class="form-control" name="residualRiskScore" value="{{ $risk->residualRiskScore }}"id="form_control_1" placeholder="Enter residualRiskScore ">
 							<div class="form-control-focus">
 							</div>
 						</div>
@@ -141,7 +143,7 @@
 						<div class="form-group form-md-line-input">
 						<label class="col-md-2 control-label" for="form_control_1">riskValue </label>
 						<div class="col-md-10">
-							<input type="text" class="form-control"name="riskValue" value="{{ old('riskValue') }}"  placeholder="Enter riskValue">
+							<input type="text" class="form-control"name="riskValue" value="{{ $risk->riskValue }}"  placeholder="Enter riskValue">
 							<div class="form-control-focus">
 							</div>
 						</div>

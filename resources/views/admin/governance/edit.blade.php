@@ -6,7 +6,7 @@
 				Bootstrap Form Controls <small>bootstrap form controls and more</small>
 				</h3>
 				<div class="page-bar">
-					<a href="" data-target="#stack2" data-toggle="modal" class="btn btn-lg green">
+					<a href="javascript:;" data-target="#stack2" data-toggle="modal" class="btn btn-lg green">
 						Add New <i class="fa fa-plus"></i>
 					</a>	
 				</div>
