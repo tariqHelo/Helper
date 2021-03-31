@@ -12,14 +12,14 @@
 				<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 				<ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <li class="nav-item start ">
-                <a href="{{ route('main') }}" class="nav-link nav-toggle">
+                <a href="{{ route('dashboard.index') }}" class="nav-link nav-toggle">
                     <i class="icon-map"></i>
                     <span class="title">Dashboard</span>
                     <span class="arrow"></span>
                 </a>
             </li>
             <li class="nav-item start ">
-                <a href="{{ route('governance') }}" class="nav-link nav-toggle">
+                <a href="{{ route('governance.index') }}" class="nav-link nav-toggle">
                     <i class="fa fa-briefcase"></i>
                     <span class="title">Governance</span>
                     <span class="arrow"></span>
@@ -27,7 +27,7 @@
 
             </li>
             <li class="nav-item start ">
-                <a href="{{ route('assignments') }}" class="nav-link nav-toggle">
+                <a href="{{ route('assigenment.index') }}" class="nav-link nav-toggle">
                     <i class="icon-support"></i>
                     <span class="title">Assignments</span>
                     <span class="arrow"></span>
@@ -35,14 +35,14 @@
 
             </li>
             <li class="nav-item start ">
-                <a href="{{ route('mangment') }}" class="nav-link nav-toggle">
+                <a href="{{ route('riskMangment.index') }}" class="nav-link nav-toggle">
                     <i class="fa fa-laptop"></i>
                     <span class="title">Risk Mangment</span>
                     <span class="arrow"></span>
                </a>
             </i>
              <li class="nav-item start ">
-                <a href="{{ route('Risks') }}" class="nav-link nav-toggle">
+                <a href="{{ route('Excelerisk.index') }}" class="nav-link nav-toggle">
                     <i class="fa fa-laptop"></i>
                     <span class="title">Risks</span>
                     <span class="arrow"></span>

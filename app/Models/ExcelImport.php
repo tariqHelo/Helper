@@ -19,7 +19,7 @@ class ExcelImport implements ToCollection
            // dd($value);
             if($key > 0)
             {
-                if($value[1] == null):
+                if($value[0] == null):
                     continue;
                 endif;
                 DB::table('risk')->insert([

@@ -41,7 +41,7 @@
 						   </p>
 						</div>
 						<!-- BEGIN PORTLET-->
-						<form class="portlet light" method="post" action="{{ route('store-assignments') }}">
+						<form class="portlet light" method="post" action="{{ route('assigenment.store') }}">
 							@csrf
 							@foreach ($qustions as $index => $qustion)
 								<div class="portlet-title">
@@ -62,11 +62,11 @@
 									</table>
 									<div class="form-group">
 										<div class="checkbox-list">
-											<input type="hidden" value="{{ $qustion->title }}" name="optionsRadios[{{ $index }}]['question']">
+											<input type="hidden" value="{{ $qustion->title }}" name="optionsRadios[{{ $index }}][question]">
 											<label>
-											<input type="radio" name="optionsRadios[{{ $index }}]['answer']" id="optionsRadios[{{ $index }}]['answer']" value="yes" > Yes</label>
+											<input type="radio" name="optionsRadios[{{ $index }}][answer]" id="optionsRadios[{{ $index }}][answer]" value="yes" > Yes</label>
 											<label>
-											<input type="radio" name="optionsRadios[{{ $index }}]['answer']" id="optionsRadios[{{ $index }}]['answer']" value="no" > No </label>
+											<input type="radio" name="optionsRadios[{{ $index }}][answer]" id="optionsRadios[{{ $index }}][answer]" value="no" > No </label>
 										</div>
 									</div>
 							@endforeach

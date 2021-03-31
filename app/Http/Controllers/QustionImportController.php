@@ -14,6 +14,7 @@ class QustionImportController extends Controller
 
      public function index()
     {
+        
         $qustions = DB::table('qustions')->orderBy('id', 'ASC')->get();
        // dd($qustions);
         return view('admin.assigenment.assigenment')->with('qustions' , $qustions);
@@ -36,12 +37,12 @@ class QustionImportController extends Controller
     }
     public function store(Request $request)
     {    
-        dd($request->optionsRadios);
         foreach($request->optionsRadios as $value):
             DB::table('answers')->insert([
                 'title' => $value['question'],
-                'answer' => $value['answer'],
+                'answer' => isset($value['answer']) ? $value['answer'] : '' ,
             ]);
         endforeach;
+        return redirect()->back();
     }
 }

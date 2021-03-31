@@ -1,7 +1,6 @@
 
 @extends('layouts.admin')		
 @section('content')
-
 	<!-- BEGIN PAGE HEADER-->
 				<h3 class="page-title">
 				Bootstrap Form Controls <small>bootstrap form controls and more</small>
