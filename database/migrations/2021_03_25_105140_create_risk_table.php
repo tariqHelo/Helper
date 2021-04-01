@@ -27,7 +27,7 @@ class CreateRiskTable extends Migration
             $table->string('treatmentDescription');
             $table->string('riskCustodian');
             $table->string('riskOwner');
-            $table->string('treatmentDueDate');
+            $table->date('treatmentDueDate');
             $table->string('status');
             $table->string('residualRiskScore');
             $table->string('riskValue');

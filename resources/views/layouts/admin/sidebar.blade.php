@@ -12,7 +12,7 @@
 				<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 				<ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <li class="nav-item start ">
-                <a href="{{ route('dashboard.index') }}" class="nav-link nav-toggle">
+                <a href="{{ route('statics') }}" class="nav-link nav-toggle">
                     <i class="icon-map"></i>
                     <span class="title">Dashboard</span>
                     <span class="arrow"></span>

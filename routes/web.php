@@ -6,6 +6,7 @@ use App\Http\Controllers\QustionImportController;
 use App\Http\Controllers\GovernanceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RiskMangmentController;
+use App\Http\Controllers\StaticsController;
 
 
 
@@ -68,6 +69,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
 
     Route::post('/import_excel/import', [ExceleImportController::class,'import'])->name('import_excel');
     Route::post('/qustion_excel/import', [QustionImportController::class,'import'])->name('qustion_excel');
-
+    
+    Route::get("statics" , [StaticsController::class , 'index'])->name("statics");
 
 });

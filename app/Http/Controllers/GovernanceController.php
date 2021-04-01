@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Governance;
+use Session;
 
 class GovernanceController extends Controller
 {
@@ -13,7 +15,8 @@ class GovernanceController extends Controller
      */
     public function index()
     { ///dd(20);
-      return view('admin.governance.governance');
+        $governances = Governance::get();
+      return view('admin.governance.governance')->with('governances' , $governances);
     }
 
     /**
@@ -23,7 +26,7 @@ class GovernanceController extends Controller
      */
     public function create()
     {
-      return view('admin.governance.create');
+    //  return view('admin.governance.create');
     }
 
     /**
@@ -34,7 +37,9 @@ class GovernanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          Governance::create($request->all());
+          Session::flash("msg","Row created successfully");
+          return redirect()->route('governance.index');
     }
 
     /**
