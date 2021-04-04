@@ -39,9 +39,12 @@ class GovernanceController extends Controller
     public function store(CreateRequest $request)
     {    // dd($request->all());
         
-          $file=basename($request->file->store("public"));
-          $request['image']=$file;
-          Governance::create($request->all());
+          $file = $request->file->store("public");
+          Governance::create([
+            'name'  =>  $request->name,
+            'discription' => $request->discription,
+            'file'  =>  $file,
+          ]);
           Session::flash("msg","Row created successfully");
           return redirect()->route('governance.index');
     }

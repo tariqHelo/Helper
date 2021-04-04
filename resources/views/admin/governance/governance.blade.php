@@ -37,9 +37,7 @@
 												<th>
 													Framwork  Discription
 												</th>
-												<th>
-													file
-												</th>
+											
 												<th>
 													Status
 												</th>
@@ -58,12 +56,12 @@
 												{{ $governance->discription }}
 
 											</th>
-											<td>
-												rrrr
-											</td>
+											
 											<td>   
 												<a href="" data-target="#stack2{{$governance->id}}" data-toggle="modal" class="btn btn-primary btn-sm"><i class='fa fa-edit'></i></a>
 												<a href="{{ route('delete-governance' , $governance->id) }}" onclick='return confirm("Are you sure dude?")' class="btn btn-warning btn-sm"><i class='fa fa-trash'></i></a>
+												{{-- <a href="{{ route('show-governance' , $governance->id) }}" class="btn btn-success btn-sm"><i class='fa fa-eye'></i></a> --}}
+												<a href="/storage/{{ $governance->file }}" class="btn btn-success btn-sm"><i class='fa fa-eye'></i></a>
 											</td>
 										</tr>
 											@endforeach

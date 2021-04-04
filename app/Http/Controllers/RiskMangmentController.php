@@ -15,7 +15,7 @@ class RiskMangmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { $mangmants = RiskMangment::get();
+    { $mangmants = RiskMangment::paginate(10);
       return view('admin.mangment.mangment')->with('mangmants' , $mangmants);
 
     }

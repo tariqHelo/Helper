@@ -58,6 +58,8 @@
 								</tr>
 								</thead>
 								<tbody>
+							@if($mangmants->count()>0)
+
 									@foreach ($mangmants as $mangmant )
 										<tr>
 											<td>
@@ -90,6 +92,15 @@
 							
 								</tbody>
 								</table>
+								  <div class="d-flex justify-content-center">
+									{{ 	 $mangmants->links()   }}
+									</div>
+
+										@else
+
+											<div class="alert alert-warning"> Sorry there is no result to you </div>
+
+										@endif
 							</div>
 						</div>
 						<!-- END EXAMPLE TABLE PORTLET-->

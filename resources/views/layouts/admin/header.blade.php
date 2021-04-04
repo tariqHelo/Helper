@@ -117,17 +117,17 @@
 							</li>
 							<li>
 								<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+									@foreach(\Illuminate\Support\Facades\DB::select("SELECT risk.name , risk.treatmentDueDate as date FROM `risk`") as $risk)
 									<li>
 										<a href="javascript:;">
-										<span class="task">
-										<span class="desc">New release v1.2 </span>
-										<span class="percent">30%</span>
-										</span>
-										<span class="progress">
-										<span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
-										</span>
+										<div class="task">
+											<div class="desc">{{ $risk->name }}</div>
+											<div class="percent">{{ $risk->date }}</div>
+										</div>
+										
 										</a>
 									</li>
+									@endforeach
 								</ul>
 							</li>
 						</ul>
