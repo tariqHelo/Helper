@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\Risk\CreateRequest;
 
+use App\Exports\RiskExport;
+
 use Illuminate\Http\Request;
 use App\Models\ExcelImport;
 use App\Models\RiskImport;
@@ -16,7 +18,7 @@ class ExceleImportController extends Controller
 
      public function index()
     {
-        $risk = DB::table('risk')->orderBy('id', 'ASC')->get();
+        $risk = DB::table('risk')->orderBy('id', 'ASC')->paginate(3);
         return view('admin.import.excel')->with('risks' ,$risk);
          
     }
@@ -34,6 +36,10 @@ class ExceleImportController extends Controller
         Session::flash("msg","File Excel Uploded successfully");
         return redirect()->back();
     }
+     public function export()
+     {
+      return Excel::download(new RiskExport, 'risk.xlsx');
+     }
     public function create()
     { // dd(20);
         return view('admin.import.create');

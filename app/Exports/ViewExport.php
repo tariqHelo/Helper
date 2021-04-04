@@ -1,15 +1,15 @@
 <?php
+namespace App\Exports;
+use App\Models\Answer;
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
 use Illuminate\Support\Facades\DB;
 
-class StaticsController extends Controller
+class ViewExport implements FromView
 {
-    public function index()
+    public function view(): View
     {
-
         $statics =  DB::select("SELECT * , count(*) as count FROM answers GROUP BY title , answer");
         $data = [];
         foreach ($statics as $key => $value) {
@@ -21,6 +21,8 @@ class StaticsController extends Controller
                 ];
             endif;
         }
-        return view("statics.index" , ['data' => $data]);
+        return view('statics.str', [
+            'data' => $data
+        ]);
     }
 }

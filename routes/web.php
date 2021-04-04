@@ -53,8 +53,12 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
     Route::resource('dashboard',      DashboardController::class);
 
     Route::resource('governance',     GovernanceController::class);
+    Route::get('/delete/governance/{governance}', [GovernanceController::class,'destroy'])->name('delete-governance');
+
 
     Route::resource('assigenment',    QustionImportController::class);
+    Route::get('export-answer', [QustionImportController::class, 'export'])->name('export-answer');
+
 
     Route::resource('riskMangment', RiskMangmentController::class);
     Route::get('/delete/riskMangment/{riskMangment}', [RiskMangmentController::class
@@ -71,5 +75,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
     Route::post('/qustion_excel/import', [QustionImportController::class,'import'])->name('qustion_excel');
     
     Route::get("statics" , [StaticsController::class , 'index'])->name("statics");
+
+
+    Route::get('export', [ExceleImportController::class, 'export'])->name('export');
 
 });

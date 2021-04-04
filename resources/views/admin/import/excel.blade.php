@@ -24,6 +24,10 @@
                         <a href="{{ route('Excelerisk.create') }}"  class="btn btn-lg green">
                             Add New <i class="fa fa-plus"></i>
                         </a>
+                        <a href="{{ route('export') }}" class="btn btn-lg purple">
+                            <span class="glyphicon glyphicon-tag">
+                            </span>
+                            Export </a>
 				</div>				
 			</form>
 		</div>
@@ -40,7 +44,8 @@
                 </div>
                 <div class="portlet-body">
                     <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
+                    @if($risks->count()>0)
+                     <table class="table table-bordered table-hover">
                         <thead>
                          <tr>
                             <th>
@@ -186,6 +191,15 @@
                         </tr>
                         </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+									{{ 	 $risks->links()   }}
+									</div>
+
+										@else
+
+											<div class="alert alert-warning"> Sorry there is no result to you </div>
+
+										@endif
                     </div>
                 </div>
             </div>

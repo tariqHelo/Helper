@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\QustionImport;
+use App\Models\Answer;
+
+use App\Exports\ViewExport;
+
 use Maatwebsite\Excel\Facades\Excel;
 use DB;
 use Auth;
@@ -45,4 +49,9 @@ class QustionImportController extends Controller
         endforeach;
         return redirect()->back();
     }
+
+      public function export()
+      {
+      return Excel::download(new ViewExport, 'statics.xlsx');
+      }
 }

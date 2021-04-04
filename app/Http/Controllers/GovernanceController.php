@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\Governance\CreateRequest;
 
 use Illuminate\Http\Request;
 use App\Models\Governance;
@@ -15,7 +16,7 @@ class GovernanceController extends Controller
      */
     public function index()
     { ///dd(20);
-        $governances = Governance::get();
+    $governances = Governance::paginate(3);
       return view('admin.governance.governance')->with('governances' , $governances);
     }
 
@@ -35,8 +36,11 @@ class GovernanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(CreateRequest $request)
+    {    // dd($request->all());
+        
+          $file=basename($request->file->store("public"));
+          $request['image']=$file;
           Governance::create($request->all());
           Session::flash("msg","Row created successfully");
           return redirect()->route('governance.index');
@@ -71,7 +75,7 @@ class GovernanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateRequest $request, $id)
     {
         //
     }
@@ -82,8 +86,10 @@ class GovernanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Governance $governance)
     {
-        //
+        $governance->delete();
+         session()->flash("msg", "w: Row Deleted Successfully");
+         return redirect()->route('governance.index');
     }
 }

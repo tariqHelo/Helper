@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RiskImport extends Model
 {
   protected $table = 'risk';
+  
   use HasFactory;
 
   protected $fillable = ['name', 'description', 'affected' , 

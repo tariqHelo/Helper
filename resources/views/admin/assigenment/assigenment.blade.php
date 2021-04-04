@@ -25,6 +25,10 @@
 						<button type="submit" class="btn btn-circle btn-lg blue m-icon-big">
 						Submit <i class="m-icon-big-swapdown m-icon-white"></i>
 						</button>
+						 <a href="{{ route('export-answer') }}" class="btn btn-lg purple">
+                            <span class="glyphicon glyphicon-tag">
+                            </span>
+                            Export </a>
 				</div>				
 			</form>
 		</div>
