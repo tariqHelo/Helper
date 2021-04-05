@@ -24,7 +24,6 @@
 							<div class="portlet-body">
 								<div class="table-scrollable">
 									@if($governances->count()>0)
-
 											<table class="table table-striped table-hover">
 											<thead>
 											<tr>
@@ -126,7 +125,9 @@
 			     	{{--End Add New --}}
 					{{--Start Add New --}}
 					@foreach ($governances as $governance)
-					 <form action="" method="POST" id="stack2{{ $governance->id }}" class="modal fade" tabindex="-1" data-width="400">
+					 <form action="{{ route('governance.update' ,$governance->id ) }}" method="POST" id="stack2{{ $governance->id }}" class="modal fade" tabindex="-1" data-width="400">
+						@csrf
+						@method('PUT')
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">

@@ -31,8 +31,11 @@ use App\Http\Controllers\Admin\AdminController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/', function(){
+return view('auth.login');
+});
 
 Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\Governance\CreateRequest;
-
+use App\Http\Requests\Governance\EditRequest;
 use Illuminate\Http\Request;
 use App\Models\Governance;
 use Session;
@@ -78,9 +78,12 @@ class GovernanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateRequest $request, $id)
+    public function update(EditRequest $request, $id)
     {
-        //
+
+          Governance::find($id)->update($request->all());
+          Session::flash("msg","Row Updated successfully");
+          return redirect()->route('governance.index');
     }
 
     /**
